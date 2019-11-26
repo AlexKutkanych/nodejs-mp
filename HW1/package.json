@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-mp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "task1": "nodemon src/Task1",
+    "task2": "nodemon src/Task2",
+    "task3": "nodemon --exec babel-node src/Task3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexKutkanych/nodejs-mp.git"
+  },
+  "author": "Oleksandr Kutkanych",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexKutkanych/nodejs-mp/issues"
+  },
+  "homepage": "https://github.com/AlexKutkanych/nodejs-mp#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "nodemon": "^2.0.1"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "event-stream": "^4.0.1"
+  }
+}
