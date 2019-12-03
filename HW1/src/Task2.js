@@ -3,7 +3,7 @@ var { pipeline } = require('stream');
 var csv = require('csvtojson');
 
 var readFilePath = 'csv/HW1-file.csv';
-var writeFilePath = 'HW1/books.txt';
+var writeFilePath = 'src/books.txt';
 
 pipeline(
   fs.createReadStream(readFilePath, 'utf-8'),

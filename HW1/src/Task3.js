@@ -3,7 +3,7 @@ import { pipeline } from 'stream';
 import csv from 'csvtojson';
 
 const readFilePath = 'csv/HW1-file.csv';
-const writeFilePath = 'HW1/books.txt';
+const writeFilePath = 'src/books-task3.txt';
 
 pipeline(
   fs.createReadStream(readFilePath, 'utf-8'),
