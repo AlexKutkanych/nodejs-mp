@@ -14,7 +14,7 @@ app.post('/user/create', async (req, res) => {
     const { error } = userSchema.validate(req.body, { abortEarly: false });
 
     if (error) {
-        var joinedErrors = createErrorMsg(error);
+        const joinedErrors = createErrorMsg(error);
         res.status(400).send(joinedErrors);
         return;
     }
@@ -32,14 +32,14 @@ app.put('/user/:id', async (req, res) => {
     const { error } = userSchema.validate(fieldsToChange, { abortEarly: false });
 
     if (error) {
-        var joinedErrors = createErrorMsg(error);
+        const joinedErrors = createErrorMsg(error);
         res.status(400).send(joinedErrors);
         return;
     }
 
     const users = await usersPromise;
     const userId = req.params.id;
-    
+
     const modifiedUser = modifyUser(users[userId], fieldsToChange);
     users[userId] = modifiedUser;
     storage.setItem('users', users);
