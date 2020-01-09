@@ -1,7 +1,7 @@
-const storage = require('node-persist');
-const Users = require('./db');
+import storage from 'node-persist';
+import Users from'./db';
 
-async function persistUsers() {
+const persistUsers = async () => {
     await storage.init();
     await storage.setItem('users', Users);
     return await storage.getItem('users');

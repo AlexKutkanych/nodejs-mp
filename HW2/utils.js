@@ -1,4 +1,4 @@
-const Joi = require('@hapi/joi')
+import Joi from '@hapi/joi';
 
 const addUser = (users, userData) => {
     const lastId = users[users.length - 1].id;

@@ -6,7 +6,6 @@ import persistUsers from '../persistance';
 const app = express();
 const port = process.env.PORT || 3000;
 
-
 const usersPromise = persistUsers();
 
 app.get('/user/:id', async (req, res) => {

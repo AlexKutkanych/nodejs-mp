@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  	"devTask1": "concurrently --kill-others \"npm run nodemonBabelTask1\" \"npm run nodemonLintTask1\"",
-  	"devTask2": "concurrently --kill-others \"npm run nodemonBabelTask2\" \"npm run nodemonLintTask2\"",
-  	"nodemonBabelTask1": "nodemon Task1/index.js --exec babel-node --presets @babel/preset-env",
-  	"nodemonLintTask1": "nodemon Task1/index.js --exec eslint",
-  	"nodemonBabelTask2": "nodemon Task2/index.js --exec babel-node --presets @babel/preset-env",
-  	"nodemonLintTask2": "nodemon Task2/index.js --exec eslint",
+    "devTask1": "concurrently --kill-others \"npm run nodemonBabelTask1\" \"npm run nodemonLintTask1\"",
+    "devTask2": "concurrently --kill-others \"npm run nodemonBabelTask2\" \"npm run nodemonLintTask2\"",
+    "nodemonBabelTask1": "nodemon Task1/index.js --exec babel-node --presets @babel/preset-env",
+    "nodemonLintTask1": "nodemon Task1/index.js --exec eslint",
+    "nodemonBabelTask2": "nodemon Task2/index.js --exec babel-node --presets @babel/preset-env",
+    "nodemonLintTask2": "nodemon Task2/index.js --exec eslint",
     "lint": "eslint -c .eslintrc */*.js"
   },
   "author": "",
