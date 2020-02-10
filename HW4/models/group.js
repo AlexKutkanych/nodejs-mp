@@ -8,6 +8,10 @@ export default (sequelize, DataTypes) => {
       permission: {
           type: DataTypes.ARRAY(DataTypes.STRING),
           allowNull: false
+      },
+      userIds: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        allowNull: false
       }
   });
 
