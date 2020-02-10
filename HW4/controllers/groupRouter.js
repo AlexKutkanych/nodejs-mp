@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import sequelize from '../loaders/dbLoader';
 import { getAllItems, getItemById, deleteItem } from '../services';
 
 const groupRouter = Router();
@@ -56,31 +57,23 @@ groupRouter.post('/group/create', async (req, res) => {
 
 groupRouter.post('/group/add-user', async (req, res) => {
     const Groups = req.app.get('Groups');
-    const Users = req.app.get('Users');
+    const { groupId, userId } = req.body;
+
     try {
-        const group = await Groups.findOne({ where: { name: req.body.name }});
+        const trans = await sequelize.transaction()
+        const group = await Groups.findOne({ where: { id: groupId }}, {transaction: trans })
+        const updateGroup = await group.update({ userIds: userId }, {transction: trans });
 
-        if (!group) {
-            return res.status(404).send(`There is no group called ${req.body.name} found`);
+        if (updateGroup) {
+            res.status(200).json(group);
+            trans.commit();
+        } else {
+            trans.rollback()
         }
-
-        const user = await Users.findByPk(req.body.userId);
-        await group.addUser(user.dataValues.id);
-
-        let usersGroups = await Users.findByPk(req.body.userId, {
-            include: [{
-                model: Groups,
-                as: 'groups',
-                attributes: ['id', 'name']
-            }]
-        });
-        
-        res.status(200).json(usersGroups);
     } catch(error) {
         console.log(error);
         res.status(500).send(error);
     }
-    
 });
 
 groupRouter.put('/group/:id', async (req, res) => {

@@ -1,14 +1,10 @@
 import Sequelize from 'sequelize';
+import sequelize from './dbLoader';
 import Users from './user';
 import Groups from './group';
 import GroupUsers from './groupUser';
 
 module.exports = () => {
-    const sequelize = new Sequelize('postgres', 'postgres', 'test1', {
-        host: 'localhost',
-        dialect: 'postgres'
-    });
-
     sequelize
         .authenticate()
         .then(() => {
