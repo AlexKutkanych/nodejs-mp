@@ -4,33 +4,43 @@ import { getAllItems, getItemById, deleteItem, createLog } from '../services';
 
 const groupRouter = Router();
 
-groupRouter.get('/group', async (req, res) => {
-    const Groups = req.app.get('Groups');
-    const groups = await getAllItems(Groups);
-    createLog('getAllItems', Groups);
-
-    if (groups.length) {
-        res.json(groups);
-    } else {
-        res.send(`No Groups in your DB!`);
+groupRouter.get('/group', async (req, res, next) => {
+    try {
+        const Groups = req.app.get('Groups');
+        const groups = await getAllItems(Groups);
+        createLog('getAllItems', Groups);
+    
+        if (groups.length) {
+            res.json(groups);
+        } else {
+            throw new Error(`No Groups in your DB! | ${req.method} ${req.originalUrl}`);
+        }
+    } catch (error) {
+        next(error);
+        res.sendStatus(500);
     }
 });
 
-groupRouter.get('/group/:id', async (req, res) => {
-    const groupId = req.params.id;
-    const Groups = req.app.get('Groups');
-    const currentData = await getItemById(Groups, groupId);
-    createLog('getItemById', Groups, groupId);
-
-    if (currentData) {
-        const currentUser = currentData.dataValues;
-        res.json(currentUser);
-    } else {
-        res.send(`Group with id ${groupId} does not exist!`);
+groupRouter.get('/group/:id', async (req, res, next) => {
+    try {
+        const groupId = req.params.id;
+        const Groups = req.app.get('Groups');
+        const currentData = await getItemById(Groups, groupId);
+        createLog('getItemById', Groups, groupId);
+    
+        if (currentData) {
+            const currentUser = currentData.dataValues;
+            res.json(currentUser);
+        } else {
+            throw new Error(`Group with id ${groupId} does not exist! | ${req.method} ${req.originalUrl} | data: ${JSON.stringify(req.params)}`);
+        }
+    } catch (error) {
+        next(error);
+        return res.sendStatus(500);
     }
 });
 
-groupRouter.post('/group/create', async (req, res) => {
+groupRouter.post('/group/create', async (req, res, next) => {
     const Groups = req.app.get('Groups');
     const Users = req.app.get('Users');
     try {
@@ -52,12 +62,12 @@ groupRouter.post('/group/create', async (req, res) => {
         
         res.status(200).json(usersGroups);
     } catch(error) {
-        console.log(error);
-        res.status(500).send(error);
+        next(error);
+        res.sendStatus(500);
     }
 });
 
-groupRouter.post('/group/add-user', async (req, res) => {
+groupRouter.post('/group/add-user', async (req, res, next) => {
     const Groups = req.app.get('Groups');
     const { groupId, userId } = req.body;
 
@@ -73,36 +83,47 @@ groupRouter.post('/group/add-user', async (req, res) => {
             trans.rollback()
         }
     } catch(error) {
-        console.log(error);
+        next(error);
         res.status(500).send(error);
     }
 });
 
-groupRouter.put('/group/:id', async (req, res) => {
-    const groupId = req.params.id;
-    const Groups = req.app.get('Groups');
-    const currentData = await getItemById(Groups, groupId);
-    createLog('getItemById', Groups, groupId);
-
-    if (currentData) {
-        const currentGroup = currentData.dataValues;
-        currentData.update(req.body);
-        res.status(200).json(currentGroup);
-    } else {
-        res.send(`User with id ${userId} does not exist!`);
+groupRouter.put('/group/:id', async (req, res, next) => {
+    try {
+        const groupId = req.params.id;
+        const Groups = req.app.get('Groups');
+        const currentData = await getItemById(Groups, groupId);
+        createLog('getItemById', Groups, groupId);
+    
+        if (currentData) {
+            const currentGroup = currentData.dataValues;
+            currentData.update(req.body);
+            res.status(200).json(currentGroup);
+        } else {
+            throw new Error(`Group with id ${groupId} does not exist! | ${req.method} ${req.originalUrl} | data: ${JSON.stringify(req.params)}`);
+        }
+    } catch (error) {
+        next(error);
+        return res.sendStatus(500);
     }
 });
 
-groupRouter.delete('/group/:id', async (req, res) => {
-    const groupId = req.params.id;
-    const Groups = req.app.get('Groups');
-    const currentData = await deleteItem(Groups, groupId);
-    createLog('getItemById', Groups, groupId);
-
-    if (currentData) {
-        res.status(200).json(`Group with id ${groupId} has been deleted!`);
-    } else {
-        res.status(403).json(`No group with id ${groupId}!`);
+groupRouter.delete('/group/:id', async (req, res, next) => {
+    try {
+        const groupId = req.params.id;
+        const Groups = req.app.get('Groups');
+        const currentData = await deleteItem(Groups, groupId);
+        createLog('getItemById', Groups, groupId);
+    
+        if (currentData) {
+            res.status(200).json(`Group with id ${groupId} has been deleted!`);
+        } else {
+            throw new Error(`No group with id ${groupId}! | ${req.method} ${req.originalUrl} | data: ${JSON.stringify(req.params)}`);
+            
+        }
+    } catch (error) {
+        next(error);
+        res.sendStatus(500);
     }
 });
 

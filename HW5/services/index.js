@@ -1,4 +1,4 @@
-import logger from '../logger';
+import logger from '../logger/logger';
 
 const getAllItems = DB => DB.findAll();
 const getItemById = (DB, id) => DB.findByPk(id);
@@ -8,11 +8,14 @@ const createLog = (name, ...args) => {
     logger.info(`Method ${name} has been called | data: ${JSON.stringify({DB: args[0].name, userId: args[1]})}`);
 };
 
+const createErrorLog = errorMesage => logger.error(errorMesage);
+
 module.exports = {
     getAllItems,
     getItemById,
     createItem,
     deleteItem,
-    createLog
+    createLog,
+    createErrorLog
 };
 

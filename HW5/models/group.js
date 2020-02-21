@@ -20,7 +20,8 @@ export default (sequelize, DataTypes) => {
       through: models.GroupUsers,
       as: 'users',
       foreignKey: 'groupId',
-      onDelete: 'cascade'
+      onDelete: 'cascade',
+      constraints: false
     });
   };
 
