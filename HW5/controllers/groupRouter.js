@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import sequelize from '../loaders/dbLoader';
+import sequelize from '../loaders/dbConfig';
 import { getAllItems, getItemById, deleteItem, createLog } from '../services';
 
 const groupRouter = Router();
