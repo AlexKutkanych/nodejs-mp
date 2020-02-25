@@ -1,0 +1,33 @@
+{
+  "name": "hw2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devTask1": "concurrently --kill-others \"npm run nodemonBabelTask1\" \"npm run nodemonLintTask1\"",
+    "devTask2": "concurrently --kill-others \"npm run nodemonBabelTask2\" \"npm run nodemonLintTask2\"",
+    "nodemonBabelTask1": "nodemon Task1/index.js --exec babel-node --presets @babel/preset-env",
+    "nodemonLintTask1": "nodemon Task1/index.js --exec eslint",
+    "nodemonBabelTask2": "nodemon Task2/app.js --exec babel-node --presets @babel/preset-env",
+    "nodemonLintTask2": "nodemon Task2/app.js --exec eslint",
+    "lint": "eslint -c ../.eslintrc */*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.17.1",
+    "pg-promise": "^10.3.5",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.0.2",
+    "eslint": "^4.19.1",
+    "nodemon": "^2.0.2"
+  }
+}
