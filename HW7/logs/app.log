@@ -1,0 +1,42 @@
+2020-03-18 11:09:42:942 info: Server is my running at 3000
+2020-03-18 11:15:41:1541 info: Server is my running at 3000
+2020-03-18 11:16:31:1631 info: Server is my running at 3000
+2020-03-18 11:18:34:1834 info: Server is my running at 3000
+2020-03-18 11:20:50:2050 error: WHERE parameter "login" has invalid "undefined" value
+2020-03-18 11:24:03:243 info: Server is my running at 3000
+2020-03-18 11:24:25:2425 info: Server is my running at 3000
+2020-03-18 11:24:34:2434 info: Server is my running at 3000
+2020-03-18 11:25:37:2537 info: Server is my running at 3000
+2020-03-18 11:26:26:2626 info: Server is my running at 3000
+2020-03-18 11:27:00:270 info: Server is my running at 3000
+2020-03-18 11:28:21:2821 info: Server is my running at 3000
+2020-03-18 11:29:39:2939 info: Server is my running at 3000
+2020-03-18 11:29:50:2950 info: Server is my running at 3000
+2020-03-18 11:30:06:306 info: Server is my running at 3000
+2020-03-18 11:33:18:3318 info: Server is my running at 3000
+2020-03-18 11:34:00:340 info: Server is my running at 3000
+2020-03-18 11:35:58:3558 info: Server is my running at 3000
+2020-03-18 11:36:40:3640 info: Server is my running at 3000
+2020-03-18 11:36:50:3650 info: Server is my running at 3000
+2020-03-18 11:37:14:3714 info: Server is my running at 3000
+2020-03-18 11:37:16:3716 info: Method getItemById has been called | data: {"DB":"Users-DB","userId":"1"}
+2020-03-18 11:37:31:3731 info: Server is my running at 3000
+2020-03-18 11:40:20:4020 info: Server is my running at 3000
+2020-03-18 11:40:41:4041 info: Server is my running at 3000
+2020-03-18 11:41:23:4123 info: Server is my running at 3000
+2020-03-18 11:41:41:4141 info: Server is my running at 3000
+2020-03-18 11:42:09:429 info: Server is my running at 3000
+2020-03-18 11:42:15:4215 info: Server is my running at 3000
+2020-03-18 11:43:05:435 info: Server is my running at 3000
+2020-03-18 11:44:00:440 error: User with login alex or password alex does not exist!
+2020-03-18 11:44:39:4439 info: Server is my running at 3000
+2020-03-18 11:44:45:4445 error: res is not defined
+2020-03-18 11:45:04:454 info: Server is my running at 3000
+2020-03-18 11:46:00:460 info: Method getItemById has been called | data: {"DB":"Users-DB","userId":"1"}
+2020-03-18 11:47:04:474 info: Server is my running at 3000
+2020-03-18 11:53:14:5314 info: Server is my running at 3000
+2020-03-18 11:53:47:5347 info: Server is my running at 3000
+2020-03-18 11:53:54:5354 info: Method getItemById has been called | data: {"DB":"Users-DB","userId":"2"}
+2020-03-18 11:56:07:567 info: Server is my running at 3000
+2020-03-18 11:56:15:5615 error: password authentication failed for user "Admin"
+2020-03-18 11:56:36:5636 info: Server is my running at 3000
