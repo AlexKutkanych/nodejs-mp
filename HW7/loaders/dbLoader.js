@@ -1,10 +1,16 @@
 import Sequelize from 'sequelize';
-import sequelize from './dbConfig';
+import envConfigs from './dbConfig';
 import Users from './user';
 import Groups from './group';
 import GroupUsers from './groupUser';
 
+
 module.exports = () => {
+    const env = process.env.NODE_ENV || 'development';
+    const config = envConfigs[env];
+
+    const sequelize = new Sequelize(config.url);
+
     sequelize
         .authenticate()
         .then(() => {

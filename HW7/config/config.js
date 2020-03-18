@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 // module.exports = new Sequelize('postgres://postgres:test1@localhost/postgres')
 
 module.exports = {
