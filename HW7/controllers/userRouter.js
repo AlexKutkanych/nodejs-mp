@@ -7,7 +7,6 @@ userRouter.get('/user/:id', async (req, res, next) => {
     try {
         const userId = req.params.id;
         const Users = req.app.get('Users');
-        console.log('heeeeeeeeee');
         const currentData = await getItemById(Users, userId);
         createLog('getItemById', Users, userId);
     

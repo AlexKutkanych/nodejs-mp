@@ -40,3 +40,7 @@
 2020-03-18 11:56:07:567 info: Server is my running at 3000
 2020-03-18 11:56:15:5615 error: password authentication failed for user "Admin"
 2020-03-18 11:56:36:5636 info: Server is my running at 3000
+2020-03-18 12:16:02:162 info: Server is my running at 3000
+2020-03-18 12:16:07:167 info: Method getItemById has been called | data: {"DB":"Users-DB","userId":"2"}
+2020-03-18 12:16:16:1616 info: Method getItemById has been called | data: {"DB":"Users-DB","userId":"2"}
+2020-03-18 12:32:55:3255 info: Server is my running at 3000

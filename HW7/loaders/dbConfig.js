@@ -1,8 +1,8 @@
 import Sequelize from 'sequelize';
 
-// const { DATABASE, USERNAME, PASSWORD, HOST, DIALECT } = process.env;
+const { DATABASE, DB_USERNAME, DB_PASSWORD, HOST, DIALECT } = process.env;
 
-module.exports = new Sequelize('postgres', 'postgres', 'test1', {
-  host: 'localhost',
-  dialect: 'postgres'
+module.exports = new Sequelize(DATABASE, DB_USERNAME, DB_PASSWORD, {
+  host: HOST,
+  dialect: DIALECT
 });
