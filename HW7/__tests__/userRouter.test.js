@@ -3,13 +3,43 @@ const express = require('express');
  
 const app = express();
 
-const userId = 1;
+const mockData = {
+  userId: 1,
+  newUser: {login: 'john', password: 'john_john', age: 30},
+  updatedUserData: { password: 'new_password', age: 31 }
+}
+
+const { userId, newUser, updatedUserData } = mockData;
 
 describe('User router', () => {
-  it('should return user', async () => {
-    const res = await request(app).get(`/user/${userId}`).set('x-access-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImxvZ2luIjoiYWxleDExMSIsImlhdCI6MTU4NDUyODQ4NywiZXhwIjoxNTg0NTMyMDg3fQ.2iYYXDRQQDH1MrmaCPPgh5YgwV51fAJjDxz6QZSxdug');
+  it('should return user by id', async () => {
+    const res = await request(app).get(`/user/${userId}`);
 
     expect(res.statusCode).toEqual(200);
-    // expect(res.body).toHaveProperty('post')
+  });
+
+  it('should create user', async () => {
+    const res =
+      await request(app)
+              .post(`/user/create`)
+              .send(newUser);
+
+    expect(res.statusCode).toEqual(201);
+  });
+
+  it('should update user', async () => {
+    const res =
+      await request(app)
+              .put(`/user/${userId}`)
+              .send(updatedUserData);
+
+    expect(res.statusCode).toEqual(200);
+  });
+
+
+  it('should delete user by id', async () => {
+    const res = await request(app).delete(`/user/${userId}`);
+
+    expect(res.statusCode).toEqual(200);
   });
 });

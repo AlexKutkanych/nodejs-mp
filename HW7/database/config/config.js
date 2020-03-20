@@ -1,5 +1,4 @@
-require('dotenv').config();
-// module.exports = new Sequelize('postgres://postgres:test1@localhost/postgres')
+require('dotenv').config()
 
 module.exports = {
   development: {
@@ -9,5 +8,9 @@ module.exports = {
   test: {
     url: process.env.TEST_DATABASE_URL,
     dialect: 'postgres',
-  }
-};
+  },
+  production: {
+    url: process.env.DATABASE_URL,
+    dialect: 'postgres',
+  },
+}

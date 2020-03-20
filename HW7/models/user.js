@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-  const User = sequelize.define('Users-DB', {
+  const User = sequelize.define('Users', {
       login: {
           type: DataTypes.STRING,
           allowNull: false

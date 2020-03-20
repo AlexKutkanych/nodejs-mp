@@ -46,7 +46,8 @@ groupRouter.post('/group/create', async (req, res, next) => {
     try {
         const newGroup = await Groups.create({
             name: req.body.name,
-            permission: req.body.permission
+            permission: req.body.permission,
+            userIds: req.body.userId
         });
     
         const user = await Users.findByPk(req.body.userId);
