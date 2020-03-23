@@ -6,7 +6,6 @@ const router = Router();
 router.get('/user/:id', async (req, res) => {
     const userId = req.params.id;
     const Users = req.app.get('Users');
-    console.log('here');
     const currentData = await getUserById(Users, userId);
 
     if (currentData) {

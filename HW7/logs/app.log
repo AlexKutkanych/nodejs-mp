@@ -1,0 +1,68 @@
+2020-03-21 13:44:17:4417 info: Server is my running at 3000
+2020-03-21 13:45:51:4551 info: Server is my running at 3000
+2020-03-21 13:46:34:4634 info: Server is my running at 3000
+2020-03-21 13:46:37:4637 info: Server is my running at 3000
+2020-03-21 13:46:40:4640 info: Server is my running at 3000
+2020-03-21 13:46:43:4643 info: Server is my running at 3000
+2020-03-21 13:51:09:519 info: Server is my running at 3000
+2020-03-21 13:52:06:526 info: Server is my running at 3000
+2020-03-21 13:54:12:5412 info: Server is my running at 3000
+2020-03-21 13:54:21:5421 info: GET /user/1 404 1.830 ms - 145
+2020-03-21 13:55:02:552 info: GET /user/1 404 0.285 ms - 145
+2020-03-21 13:55:41:5541 info: Server is my running at 3000
+2020-03-21 15:57:00:570 info: Server is my running at 3000
+2020-03-21 15:57:15:5715 info: Server is my running at 3000
+2020-03-21 15:59:16:5916 info: Server is my running at 3000
+2020-03-23 10:18:39:1839 info: Server is my running at 3000
+2020-03-23 10:19:09:199 info: Method getItemById has been called | data: {"DB":"Users","userId":"2"}
+2020-03-23 10:20:08:208 info: Server is my running at 3000
+2020-03-23 10:20:50:2050 info: Server is my running at 3000
+2020-03-23 10:23:47:2347 info: Server is my running at 3000
+2020-03-23 10:24:33:2433 info: Server is my running at 3000
+2020-03-23 10:26:28:2628 info: Method getItemById has been called | data: {"DB":"Users","userId":"2"}
+2020-03-23 10:27:07:277 info: Server is my running at 3000
+2020-03-23 10:27:42:2742 info: Server is my running at 3000
+2020-03-23 10:27:53:2753 info: Server is my running at 3000
+2020-03-23 10:38:22:3822 info: Server is my running at 3000
+2020-03-23 10:38:27:3827 info: Server is my running at 3000
+2020-03-23 10:38:44:3844 info: Server is my running at 3000
+2020-03-23 10:42:01:421 info: Method getItemById has been called | data: {"DB":"Groups","userId":"2"}
+2020-03-23 10:42:38:4238 info: Server is my running at 3000
+2020-03-23 10:43:10:4310 error: notNull Violation: Groups.name cannot be null,
+notNull Violation: Groups.permission cannot be null,
+notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:43:47:4347 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:44:08:448 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:44:22:4422 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:44:43:4443 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:45:08:458 info: Server is my running at 3000
+2020-03-23 10:45:10:4510 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:45:38:4538 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:45:55:4555 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:46:49:4649 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:47:22:4722 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:47:49:4749 info: Server is my running at 3000
+2020-03-23 10:47:50:4750 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:48:03:483 info: Server is my running at 3000
+2020-03-23 10:48:07:487 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:48:12:4812 info: Server is my running at 3000
+2020-03-23 10:48:16:4816 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:48:57:4857 info: Server is my running at 3000
+2020-03-23 10:48:59:4859 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:50:15:5015 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:50:22:5022 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:50:37:5037 info: Server is my running at 3000
+2020-03-23 10:50:43:5043 info: Server is my running at 3000
+2020-03-23 10:50:57:5057 error: notNull Violation: Groups.userIds cannot be null
+2020-03-23 10:51:40:5140 info: Server is my running at 3000
+2020-03-23 10:51:42:5142 error: Argument passed to findByPk is invalid: 1
+2020-03-23 10:52:17:5217 info: Server is my running at 3000
+2020-03-23 10:52:19:5219 error: Argument passed to findByPk is invalid: 1
+2020-03-23 10:52:34:5234 error: values.map is not a function
+2020-03-23 10:52:58:5258 error: Validation error
+2020-03-23 10:53:10:5310 info: Server is my running at 3000
+2020-03-23 10:53:26:5326 info: Server is my running at 3000
+2020-03-23 10:53:35:5335 info: Server is my running at 3000
+2020-03-23 10:53:52:5352 info: Server is my running at 3000
+2020-03-23 10:55:18:5518 info: Server is my running at 3000
+2020-03-23 10:55:31:5531 info: Server is my running at 3000
