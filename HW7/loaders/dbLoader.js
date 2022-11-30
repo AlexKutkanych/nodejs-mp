@@ -1,0 +1,40 @@
+import Sequelize from 'sequelize';
+import envConfigs from './dbConfig';
+import Users from './user';
+import Groups from './group';
+import GroupUsers from './groupUser';
+
+
+module.exports = () => {
+    const env = process.env.NODE_ENV || 'development';
+    const config = envConfigs[env];
+
+    const sequelize = new Sequelize(config.url);
+
+    sequelize
+        .authenticate()
+        .then(() => {
+            console.log('Connection has been established successfully.');
+        })
+        .catch(err => {
+            console.error('Unable to connect to the database:', err);
+        });
+
+    const db = {
+        Users: Users(sequelize),
+        Groups: Groups(sequelize),
+        GroupUsers: GroupUsers(sequelize)
+    };
+
+    Object.keys(db).forEach(modelName => {
+        if (db[modelName].associate) {
+            db[modelName].associate(db);
+        }
+    });
+
+    db.sequelize = sequelize;
+    db.Sequelize = Sequelize;
+
+    return db;
+};
+
